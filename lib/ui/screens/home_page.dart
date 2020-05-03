@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterpagination/ui/screens/list/list_pages.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('')),
-      body: Container(),
+      body: ListPage(),
     );
   }
 }

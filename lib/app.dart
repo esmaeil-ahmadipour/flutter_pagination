@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutterpagination/ui/screens/home_page.dart';
+import 'package:flutterpagination/ui/screens/list/list_pages.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: ListPage(),
     );
   }
 }

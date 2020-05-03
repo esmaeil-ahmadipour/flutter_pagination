@@ -2,12 +2,14 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutterpagination/data/generator/list_data_source.dart';
+
 import './bloc.dart';
 
 class ListBloc extends Bloc<ListEvent, ListState> {
   final ListDataSource _dataSource;
 
   ListBloc(this._dataSource);
+
 
   void getNextListPage() {
     add(FetchNextPage());
@@ -16,10 +18,9 @@ class ListBloc extends Bloc<ListEvent, ListState> {
   @override
   ListState get initialState => ListState.initial();
 
-
   @override
-  Stream<ListState> _bindEventsToStates(
-      ListState currentState, ListEvent event) async* {
+  Stream<ListState> mapEventToState(ListEvent event) async* {
+    final currentState = state;
     if (event is FetchNextPage) {
       try {
         final nextPageItems = await _dataSource.getNextListPage();
@@ -29,6 +30,4 @@ class ListBloc extends Bloc<ListEvent, ListState> {
       }
     }
   }
-
-
 }
